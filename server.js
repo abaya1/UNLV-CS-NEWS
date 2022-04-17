@@ -21,14 +21,14 @@ app.get("/getadminspassword", (req, res) => { //get the admins username and pass
     collection.findOne({username:"admin"}).then(admin => res.json(admin));
   });
 
-app.get("/getnews", (req, res) => { // gets all the news in json obj names are i
+app.get("/getnews", (req, res) => { // gets all the news in json 
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
     collection.find().then(news => res.json(news));
   });
 
 
-app.post("/postnews", async (req, res) => {
+app.post("/postnews", async (req, res) => { //posts news to the database
     const { news } = req.body;
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
