@@ -45,18 +45,14 @@ app.post("/postnews", async (req, res) => { //posts news to the database
         }
 
     });
-
-app.delete"/deletenews", async (req, res) => {
-    
-
-    });
-
-
-
   
+  });
+
+
+app.delete("/deletenews", async (req, res) => {
     
 
-  });
+});
 
 
 
