@@ -50,10 +50,12 @@ app.post("/postnews", async (req, res) => { //posts news to the database
 
 
 app.delete("/deletenews", async (req, res) => {
+    const { news } = req.body;
+
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
 
-    collection.findOneAndDelete()
+    collection.deleteOne(news).then(result => deleted )
     
 
 });
