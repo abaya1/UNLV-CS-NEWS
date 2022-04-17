@@ -1,0 +1,21 @@
+a {
+    color: var(--black);
+}
+.filled {
+    color: var(--dark-red);
+}
+.navbar__container a{
+    font-size: 0.65rem;
+    font-family: var(--font-family-m);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+}
+
+.navbar__container a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navbar__container{
+    margin-bottom: 10px;
+}
