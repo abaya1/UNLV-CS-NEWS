@@ -11,17 +11,17 @@ client.connect().then(result => console.log("connected to database"), err => con
 //const collection = database.collection("admin"); is collection for admin and password
 //const collection = database.collection("news"); is collection for news stories
 
-app.get("/api", (req, res) => {
+app.get("/api", (req, res) => { //check for connection
     res.json({ message: "Hello from server!" });
   });
 
-app.get("/getadminspassword", (req, res) => {
+app.get("/getadminspassword", (req, res) => { //get the admins username and password
     const database = client.db("UnlvCsNews");
     const collection = database.collection("admin");
     collection.findOne({username:"admin"}).then(admin => res.json(admin));
   });
 
-app.get("/getnews", (req, res) => {
+app.get("/getnews", (req, res) => { // gets all the news in json obj names are i
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
     collection.find().then(news => res.json(news));
@@ -40,7 +40,7 @@ app.post("/postnews", async (req, res) => {
         }
         else
         {
-            res.status(200);
+            res.status(200).send("1 news document inserted");
             console.log("1 news document inserted");
         }
 
