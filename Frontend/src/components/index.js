@@ -6,3 +6,4 @@ export {default as Latest } from './Latest/Latest';
 export {default as Navbar } from './Navbar/Navbar';
 export {default as Title } from './Title/Title';
 export {default as Twitter } from './Twitter/Twitter';
+export {default as Admin } from './Admin/Admin';

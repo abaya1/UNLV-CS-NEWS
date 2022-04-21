@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 import {UNLV, Icon, Password} from './imports.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminDashboard from '../AdminDashboard/AdminDashboard';
 import axios from 'axios';
 
 
@@ -12,6 +14,7 @@ const Login =  () => {
 
     const[password, setPassword] = useState('');
     const[user, setUser] = useState('');
+    const[errorMessage, setErrorMessage] = useState('');
 
     const loginHelper = async (e) =>
     {
@@ -20,16 +23,20 @@ const Login =  () => {
 
     if(thing.data.password == password && thing.data.username == user)
     {
-       // redirect to  admin dashboard 
+        <Router>
+            <Routes>
+                <Route path="/adminDashboard" element={<AdminDashboard />} />
+            </Routes>
+        </Router>
     }
     else
     {
-        //display error message
-    }
+        setErrorMessage('Invalid login.');
 
 
     return thing
     }
+}
 
 
 
@@ -53,6 +60,7 @@ const Login =  () => {
                     </form>
                 </div>
             </div>
+            {errorMessage && <div className="login__error"> {errorMessage} </div>}
         </div>
     );
 }

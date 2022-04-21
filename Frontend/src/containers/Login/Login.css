@@ -75,3 +75,9 @@
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
+.login__error{
+    color: var(--dark-red);
+    font-family: var(--font-family-p);
+    font-size: 0.85rem;
+}
