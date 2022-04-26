@@ -3,7 +3,9 @@ import './AdminDashboard.css';
 
 const AdminDashboard = () => {
     return(
-        <div className="dashboard"></div>
+        <div className="dashboard">
+            <p>This is the Admin Dashboard</p>
+        </div>
     )
 }
 
