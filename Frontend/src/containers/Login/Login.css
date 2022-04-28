@@ -4,18 +4,17 @@
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-color: var(--background-color);
+    background-color: #252525;
 }
 .login img{
     max-width: 100%;
     width: 100px;
+    color: var(--light-red);
 }
 .login__container{
     background-color: #fff;
     width: 500px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 10px 13px -7px #EFF5FB, 5px 5px 5px 5px rgba(244,244,244,0); 
-    box-shadow: 0px 10px 13px -7px #EFF5FB, 5px 5px 5px 5px rgba(244,244,244,0);
     font-family: var(--font-family-p);
     display: flex;
     justify-content: center;
@@ -81,7 +80,7 @@
 }
 
 .login__error{
-    color: var(--dark-red);
+    color: var(--light-red);
     font-family: var(--font-family-p);
     font-size: 0.85rem;
 }

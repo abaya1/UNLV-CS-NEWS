@@ -1,23 +1,35 @@
-.admin__container{
-    justify-content: center;
-    align-items: center;
-    display: flex;
+
+.btn-grad h1 {
+    color: white;
+    font-size: 2.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+} 
+.btn-grad h1:hover{
+    color: #E6E8E6;
+    cursor: pointer;
+}
+.btn-grad {
+    background-size: 200% .08em;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s, background-position .3s .3s;
 }
 
-.red {
-    background-color: var(--dark-red);
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
+.btn-grad:hover {
+    transition: background-size 1s .3s, background-position .3s;
+    background-size: 100% 0%;
+    background-position: 100% 100%;
 }
 
+.red{
+    background-image: linear-gradient(var(--dark-red) 0 0);
+    border-radius: 5px;
+}
 .blue {
-    background-color: var(--secondary-background);
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
 }
 
-.dashboard__selection {
-    display: flex;
+.black {
+    background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)
 }
