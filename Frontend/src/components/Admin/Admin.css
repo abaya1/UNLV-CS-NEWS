@@ -1,0 +1,23 @@
+.admin__container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.red {
+    background-color: var(--dark-red);
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.blue {
+    background-color: var(--secondary-background);
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.dashboard__selection {
+    display: flex;
+}
