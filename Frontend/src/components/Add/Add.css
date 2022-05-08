@@ -1,0 +1,42 @@
+form{
+   display: flex;
+   flex-direction: column;
+}
+input{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 500px;
+    margin-bottom: 25px;
+    padding: 0 0 0 10px;
+    font-family: var(--font-family-p);
+}
+.add__title{
+    height: 35px;
+}
+
+.add__body {
+    height: 300px;
+}
+.add_component {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.add__file{
+    font-family: var(--font-family-p);
+    color: white;
+}
+button {
+    height: 30px;
+    background-color: var(--dark-red);
+    border:none;
+    outline: none;
+    color: white;
+    font-family: var(--font-family-p);
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+}
+

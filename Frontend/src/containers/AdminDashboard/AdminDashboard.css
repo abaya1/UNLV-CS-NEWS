@@ -1,6 +1,6 @@
 .dashboard{
     background-color: #252525;
-    height: 100vh;
+    height: auto;
 }
 
 .dashboard h1 {
@@ -17,12 +17,18 @@
 }
 
 .dashboard__selection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
+    height: 86vh;
 }
 
 .dashboard__single {
     margin: 0 150px;
+}
+
+.trial {
+    color: white;
+    border: 2px solid white;
+}
+
+.dashboard__addon{
+    margin-top: 100px;
 }
