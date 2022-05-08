@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Admin, Add } from '../../components';
+import { Admin, Add, Delete } from '../../components';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -13,6 +13,9 @@ const AdminDashboard = () => {
         }
         else if (num === 1) {
             return (<Add/>)
+        }
+        else if (num === 3) {
+            return (<Delete />)
         }
     }
     return(

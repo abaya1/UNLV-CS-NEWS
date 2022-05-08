@@ -40,7 +40,7 @@ app.get("/getadminspassword", (req, res) => { //get the admins username and pass
 app.get("/getnews", (req, res) => { // gets all the news in json 
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
-    collection.find().then(news => res.json(news));
+    collection.find({}).toArray((err, result) => { res.json(result)})
   });
 
   app.post("/postimage", upload.single("uploaded_file"), (req, res) => { 
@@ -75,13 +75,13 @@ app.post("/postnews", async (req, res) => { //posts news to the database
   });
 
 
-app.delete("/deletenews", async (req, res) => {
-    const { news } = req.body;
+app.post("/deletenews", async (req, res) => {
+
 
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
-
-    collection.deleteOne(news).then(result => deleted )
+    console.log(req.body);
+    collection.deleteOne({Title: req.body.Title}).then(() => console.log("hi"))
     
 
 });

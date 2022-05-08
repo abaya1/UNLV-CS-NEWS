@@ -8,3 +8,4 @@ export {default as Title } from './Title/Title';
 export {default as Twitter } from './Twitter/Twitter';
 export {default as Admin } from './Admin/Admin';
 export {default as Add } from './Add/Add';
+export {default as Delete } from './Delete/Delete';

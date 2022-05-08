@@ -16,14 +16,12 @@ const Add = () => {
         axios.post('/postnews', {
             Title: title,
             Story: story,
-            Image: image
+            Image: image,
+            type: "news"
         })
 
 
-
     }
-
-
 
     return(
         <div className="add_component">
@@ -31,7 +29,7 @@ const Add = () => {
                 <input className="add__title" type="text" value={title} onChange={ (e) => settitle( e.target.value)} placeholder="Title"/>
                 <input className="add__body"type="text"   value={story} onChange={ (e) => setstory( e.target.value)}/>
                 <input className="add__file" type="file" name='uploaded_file'   value={image} onChange={ (e) => setImage( e.target.value)}/>
-                <button type="submit" value="Submit"> Submit </button>
+                <button className="add__button" type="submit" value="Submit"> Submit </button>
             </form>
         </div>
     );

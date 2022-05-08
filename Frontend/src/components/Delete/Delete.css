@@ -1,0 +1,25 @@
+.delete__container{
+    font-family: var(--font-family-p);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.delete__table{
+    width: 50%;
+}
+.delete__button {
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+.delete__content {
+    color:white;
+    border-bottom: 2px solid white;
+}
+
+.delete__button:hover{
+    color: var(--light-red);
+    cursor: pointer;
+}

@@ -28,7 +28,7 @@ input{
     font-family: var(--font-family-p);
     color: white;
 }
-button {
+.add__button {
     height: 30px;
     background-color: var(--dark-red);
     border:none;
@@ -38,5 +38,6 @@ button {
     letter-spacing: 1px;
     font-size: 0.85rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
