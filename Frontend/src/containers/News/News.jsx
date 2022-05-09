@@ -1,9 +1,20 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, Featured, Latest } from '../../components';
 import { Logo, Football, Hussain, Coding, Tablet, eSport} from './imports';
 import './News.css';
+import axios from 'axios'
 
 const News = () => {
+
+    const [news, setnews] = useState([]);
+    const [newsindex, setnewsindex] = useState(0);
+
+    useEffect(() => { axios.get('/getnews').then((res) => setnews(res.data));}, []);
+
+
+
+
     return (
         <div className="news__container">
             <div className="news">
@@ -20,7 +31,7 @@ const News = () => {
             
             <div className="news__header">
                 <div className="news__featured">
-                    <Featured image={Football} />
+                    <Featured story={news[newsindex]} />
                 </div>
                 <div className="news__latest">
                     <div className="news__latest-header">

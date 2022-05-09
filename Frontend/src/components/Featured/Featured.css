@@ -1,6 +1,7 @@
 .featured__container img {
-    width: 100%;
+    max-width: 100%;
     float: right;
+    object-fit: contain;
 }
 .featured__container h1{
     display:none;
@@ -15,14 +16,14 @@
     letter-spacing: 0.1em;
     color: var(--black);
     font-size: 0.9rem;
-    margin: 10px 0 10px 150px;
+    margin: 10px 0 10px 580px;
 }
-
-.featured__container p:last-child{
-    align-items: flex-end;
-    text-align: right;
+.featured__readMore{
     color: var(--dark-red);
-    line-height: 24px;
+    cursor:pointer;
+}
+.featured__readMore:hover{
+    text-decoration: underline;
 }
 
 .featured__container a {
@@ -33,6 +34,16 @@
 .featured__container a:hover{
     text-decoration: underline;
     text-decoration-color: var(--dark-red);
+}
+@media screen and (max-width: 1575px){
+    .featured__container p {
+        margin: 10px 0 10px 250px;
+    }
+}
+@media screen and (max-width: 1205px){
+    .featured__container p {
+        margin: 10px 0 10px 120px;
+    }
 }
 
 @media screen and (max-width: 875px){

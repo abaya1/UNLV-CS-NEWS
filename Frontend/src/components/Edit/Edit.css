@@ -1,0 +1,10 @@
+.edit__container {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+}
+.edit__title {
+    width: 500px;
+    border: none;
+    outline: none;
+}

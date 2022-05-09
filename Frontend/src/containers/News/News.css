@@ -6,7 +6,7 @@
 .news__container{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     justify-content: center;
 }
 
@@ -14,11 +14,13 @@
     width: 60%;
     float: left;
     margin-left: 100px;
+    margin-top: 5%;
 }
 .news__latest{
     width: 20%;
     float: right;
     margin-right: 20px;
+    margin-top: 5%;
 }
 
 .news__latest-header h1 {
@@ -45,13 +47,24 @@
 
 .news__navbar{
     position: absolute;
-    margin-top: 37%;
-    margin-left: 100px;
+    margin-top: 620px;
+    margin-left: 20%;
 }
 .news__logo {
     position: absolute;
     top: 1%;
     right: 1%;
+}
+@media screen and (max-width: 1400px) {
+    .news__navbar{
+        margin-left: 0;
+        margin-top: 42%;
+    }
+}
+@media screen and (max-width: 1575px) {
+    .news__navbar{
+        margin-left: 11%;
+    }
 }
 @media screen and (max-width: 1209px) {
     .news__latest{
@@ -61,14 +74,15 @@
         width: 55%;
     }
     .news__navbar {
-        margin-top: 34%;
+        margin-top: 40%;
+        margin-left: 8%;
     }
 }
 @media screen and (max-width: 875px){
     .news__header{
         display: flex;
         flex-direction: column;
-        margin-top: 600px;
+        margin-top: 50px;
     }
     .news__navbar{
         display: none;
@@ -84,12 +98,11 @@
     .news__featured{
         width: 100%;
         margin-left: 0;
-        margin-top: 200px;
     }
 }
 @media screen and (max-width: 550px) {
     .news__header{
-        margin-top: 500px;
+        margin-top: 50px;
     }
     .news__latest-header h1{
         font-size: 1rem;
