@@ -1,11 +1,56 @@
-import React, {useState, useEffect, Fragment} from 'react';
-import './Edit.css';
+import React, {useState, useEffect } from 'react';
+import '../Delete/Delete.css';
+import '../Add/Add.css';
 import axios from 'axios';
 
-const Edit = () => {
 
+const Edit = () => {
     const [news, setNews] = useState([]);
-    const [showAdd, setShowAdd] = useState(false);
+    const [edit, setEdit] = useState(-1);
+
+    const [id , setid] = useState("");
+    const [title , settitle] = useState("");
+    const [story , setstory] = useState("");
+    const [image , setImage] = useState("");
+
+    const updatenews = () => 
+    {
+
+        if(image != "")
+        {
+            axios.post('/updatenews', {
+                _id: id,
+                Title: title,
+                Story: story,
+                Image: image,
+                type: "news"
+            })
+
+        }
+        else
+        {
+            axios.post('/updatenews', {
+                _id: id,
+                Title: title,
+                Story: story,
+                type: "news"
+            })
+
+        }
+
+    }
+
+
+    const editstuff = async (index) =>
+    {
+        const id = "ObjectId("
+
+        setEdit(index);
+        console.log(news[index])
+        settitle(news[index].Title)
+        setstory(news[index].Story)
+        setid(news[index]._id)
+    }
 
     useEffect(() => {
 
@@ -14,41 +59,62 @@ const Edit = () => {
             setNews(data.data);
             console.log(data.data);
             
-        };
+        }; 
         getNews();
 
     }, []);
-    
-    const editText = (props) => {
-        return (
-            <Fragment>
-                <form>
-                    {news.map((datas) => {
-                        <textarea className="edit__title" type="text">{datas.title}</textarea>
-                        
-                    })}
-                    <h1>But what</h1>
+
+
+    if(edit != -1)
+    {
+        return(
+            <div className="add_component">
+                <form onSubmit={updatenews} action="/postimage" method='POST' encType='multipart/form-data'>
+                    <input className="add__title" type="text" value={title} onChange={ (e) => settitle( e.target.value)} placeholder="Title"/>
+                    <textarea className="add__body"type="text"   value={story} onChange={ (e) => setstory( e.target.value)}/>
+                    <input className="add__file" type="file" name='uploaded_file'   value={image} onChange={ (e) => setImage( e.target.value)}/>
+                    <button className="add__button" type="submit" value="Submit"> Submit </button>
                 </form>
-            </Fragment>
+            </div>
+        );
+    }
+    else
+    {
+        return (
+            <div className="delete__container">
+                <table className="delete__table">
+                    <tbody>
+                        {news.map((datas, index) => (
+                            <tr key={datas._id}>
+                                <td className="delete__content">{datas.Title}</td>
+                                <td className="delete__content"><button className="delete__button" onClick={() => {editstuff(index)}}>Edit</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 
-    return(
-        <div className="edit__content">
-            <table className="edit__table">
-                <tbody>
-                    {news.map((datas) => (
-                        <tr key={datas._id}>
-                            <td className="delete__content">{datas.Title}</td>
-                            <td className="delete__content"><button className="delete__button" onClick={() => setShowAdd((showAdd) => !showAdd)}>Edit</button>
-                            {showAdd && <editText/>}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 export default Edit;

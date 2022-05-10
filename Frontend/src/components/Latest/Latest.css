@@ -1,14 +1,15 @@
 .latest__container {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 50px;
 }
 
 .latest__title {
     display: flex;
     flex-direction: column;
-    text-align: right;
-    justify-content:space-between;
-
+    text-align: left;
 }
 
 .latest__title h1 {
@@ -19,7 +20,10 @@
 }
 
 .latest__container img {
-    max-width: 100%;
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .latest__container a {
@@ -42,7 +46,7 @@
         margin-left: 10px;
     }
     .latest__container{
-        margin: 25px 150px;
+        margin: 25px 0;
     }
 }
 
@@ -51,6 +55,6 @@
         max-width: 100%;
     }
     .latest__container {
-        margin: 25px 10px;
+        margin: 25px 0;
     }
 }

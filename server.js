@@ -14,7 +14,7 @@ var storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId, MongoInvalidArgumentError } = require('mongodb');
 const { redirect } = require('express/lib/response');
 const uri = "mongodb+srv://arronabay:Sunshine360&$@cluster0.s1qrw.mongodb.net/shop?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
@@ -81,8 +81,21 @@ app.post("/deletenews", async (req, res) => {
     const database = client.db("UnlvCsNews");
     const collection = database.collection("news");
     console.log(req.body);
-    collection.deleteOne({Title: req.body.Title}).then(() => console.log("hi"))
+    collection.deleteOne({Title: req.body.Title}).then(() => console.log("deleted succesfully"))
     
+
+});
+
+app.post("/updatenews", async (req, res) => {
+
+  var _id = new ObjectId
+   req.body._id = new ObjectId(req.body._id)
+
+  const database = client.db("UnlvCsNews");
+  const collection = database.collection("news");
+  console.log(req.body);
+  collection.updateOne({_id: req.body._id},{$set: req.body},{upsert: true}).then(() => console.log("updated successfully"));
+  
 
 });
 
