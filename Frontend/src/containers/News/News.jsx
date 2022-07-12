@@ -10,7 +10,7 @@ const Menu = () => (
     <React.Fragment>
         <p><a href="#">FEATURED NEWS</a></p>
         <p><a href="#">RESEARCH</a></p>
-        <p><a href="#">EVENTS</a></p>
+        <p><Link to="/logAdmin"> ADMIN LOGIN </Link></p>
     </React.Fragment>
 )
 
