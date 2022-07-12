@@ -5,6 +5,7 @@ import { Logo, Football, Hussain, Coding, Tablet, eSport} from './imports';
 import { RiMenu2Fill, RiCloseLine } from 'react-icons/ri';
 import './News.css';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 const Menu = () => (
     <React.Fragment>
