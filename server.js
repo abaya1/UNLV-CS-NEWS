@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const multer = require('multer')
-const port = 3002;
+const path = require('path');
+const port = process.env.PORT || 3002
+
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
 
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
