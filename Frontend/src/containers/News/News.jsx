@@ -71,7 +71,7 @@ const News = () => {
                 <div className="news__navbar">
                     <Navbar filled="filled" text="FEATURED NEWS"/>
                     <Navbar filled="none" text="RESEARCH"/>
-                    <Navbar filled="none" text="EVENTS"/>
+                    <Navbar filled="none" text="ADMIN LOGIN"/>
                 </div>
                 <div className="news__logo">
                     <img src={Logo} alt="UNLV CS Logo"/>
