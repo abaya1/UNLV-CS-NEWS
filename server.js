@@ -50,7 +50,7 @@ app.get("/getnews", (req, res) => { // gets all the news in json
 
 
 
-    res.redirect(302,'/');
+    res.redirect(302,'/AdminDashboard');
   
 
   });
